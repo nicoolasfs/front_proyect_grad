@@ -1,9 +1,9 @@
 export class Usuario{
-
-    username: string;
-    name: string;
-    cc: number;
-    role: string;
-    disabled: boolean;
-    password: string;
+    
+    username: string = '';
+    name: string = '';
+    cc: number = 0;
+    role: string = '';
+    disabled: boolean = false;
+    password: string = '';
 }

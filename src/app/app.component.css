@@ -1,6 +1,9 @@
 .example-spacer {
     flex: 1 1 auto;
   }
+  .toolbar{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
   .logo{
     width: 200px;
     height: 200px;

@@ -12,6 +12,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PecesComponent } from './pages/peces/peces.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
    
   ],
   providers: [],
