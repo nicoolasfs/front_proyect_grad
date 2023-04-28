@@ -1,6 +1,10 @@
 .example-spacer {
     flex: 1 1 auto;
   }
+  .logo{
+    width: 200px;
+    height: 200px;
+  }
   .example-container {
     width: auto;
     height: 100%;

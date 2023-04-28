@@ -29,18 +29,23 @@
 
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #sidenav class="example-sidenav" mode="side">
-    <button mat-menu-item routerLink="/home">
+    <img src="assets/fish.png" alt="logo" class="logo">
+    <button mat-menu-item (click)= "sidenav.toggle()" routerLink="/home">
       <mat-icon>home</mat-icon>
       <span>Inicio</span>
     </button>
-    <button mat-menu-item routerLink="/peces">
+    <button mat-menu-item (click)= "sidenav.toggle()" routerLink ="/peces">
       <mat-icon>photo</mat-icon>
       <span>Peces</span>
     </button>
-    <button mat-menu-item routerLink="/contacto">
+    <button mat-menu-item (click)= "sidenav.toggle()" routerLink="/contacto">
       <mat-icon>contact_support</mat-icon>
       <span>Contacto</span>
     </button>
   </mat-drawer>
+
   <mat-drawer-content>
     <router-outlet></router-outlet>
+
+  </mat-drawer-content>
+</mat-drawer-container>
