@@ -7,6 +7,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [],
@@ -18,7 +20,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatMenuModule,
     MatTooltipModule,
     MatSidenavModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   exports: [
     MatToolbarModule,
@@ -27,7 +31,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatMenuModule,
     MatTooltipModule,
     MatSidenavModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule
   ]
 
 })

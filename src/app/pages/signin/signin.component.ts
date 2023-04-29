@@ -11,8 +11,8 @@ export class SigninComponent {
   registro = {
     username:  '',
     name:   '',
-    cc:   0,
-    role:   '',
+    cc:   '',
+    role:   'Usuario',
     disabled: false,
     password: ''
   };
@@ -26,4 +26,3 @@ export class SigninComponent {
     );
   }
 }
-
