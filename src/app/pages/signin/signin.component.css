@@ -1,94 +1,147 @@
-.login-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 5rem;
-    border: white 1px solid;
-    height: auto;
-    width: 25%;
-    box-shadow:0 4px 10px 4px rgba(98, 97, 97, 0.3);
+* {
+    box-sizing: border-box;
 }
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 5rem;
-    height: auto;
+
+html, body {
+    background: #ecf0f3;
 }
-.wrapper input{
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 100;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    color: #f45b69;
+}
+
+p {
+    color: darkred;
+}
+
+.custom-form {
+    text-align: center;
+    overflow: hidden;
+    background-color: white;
+    padding: 40px 30px 30px 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
+    -moz-transition: -moz-transform 300ms, box-shadow 300ms;
+    transition: transform 300ms, box-shadow 300ms;
+    box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+}
+
+.custom-form::before, .custom-form::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 40%;
+    z-index: -1;
+}
+
+.custom-form::before {
+    left: 40%;
+    bottom: -130%;
+    background-color: rgba(69, 105, 144, 0.301);
+    -webkit-animation: wawes 6s infinite linear;
+    -moz-animation: wawes 6s infinite linear;
+    animation: wawes 6s infinite linear;
+}
+
+.custom-form::after {
+    left: 35%;
+    bottom: -125%;
+    background-color: rgba(2, 128, 144, 0.288);
+    -webkit-animation: wawes 7s infinite;
+    -moz-animation: wawes 7s infinite;
+    animation: wawes 7s infinite;
+}
+
+.custom-form input {
+    color: rgb(15, 73, 199);
+    font-family: "Asap", sans-serif;
+    display: block;
+    border-radius: 5px;
+    font-size: 16px;
     width: 100%;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: all 0.3s ease-in-out;
+    border: 0;
+    
 }
-
-h2{
-    margin-top: 2rem;
-    font-size: 2rem;
-    font-weight: 700;
+.mat-form-field{
     height: auto;
-    width: auto;
+    width: 100%;
+   
 }
-.wrapper button{
-    background-color: #0743e7;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+.custom-form button {
+    font-family: "Asap", sans-serif;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-.wrapper button:hover{
-    background-color: #fff;
-    color: #0743e7;
-    border: 1px solid #002ead;
-}
-
-hr{
-    width: 80%;
-    margin-bottom: 2rem;
-    margin-top: 0%;
-}
-a {
-    color: #fcff32;
-    text-decoration: none;
-    background-color: transparent;
-}
-
-
-.logo{
-    width: 200px;
-    height: 200px;
-}
-
-.primary__button{
-    background-color: #199319;
     color: #fff;
-    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 120px;
+    border: 0;
+    padding: 10px 0;
+    margin-top: 10px;
+    margin-left: -5px;
     border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    background-color: #f45b69;
+    -webkit-transition: background-color 300ms;
+    -moz-transition: background-color 300ms;
+    transition: background-color 300ms;
 }
-.login-footer{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+
+.custom-form button:hover {
+    transform: translateY(-3px);
+    background: rgb(136, 97, 207);
 }
-.primary__button:hover{
-    background-color: #fff;
-    color: #199319;
-    border: 1px solid #199319;
+
+.custom-form button:hover:active {
+    transform: scale(0.99);
+}
+
+@-webkit-keyframes wawes {
+    from {
+        -webkit-transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes wawes {
+    from {
+        -moz-transform: rotate(0);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@keyframes wawes {
+    from {
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }

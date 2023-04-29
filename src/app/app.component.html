@@ -1,50 +1,103 @@
-<mat-toolbar class="toolbar">
-  <button mat-icon-button (click)="sidenav.toggle()">
-    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
-    <mat-icon *ngIf="sidenav.opened">close</mat-icon>
-  </button>
-  <span>MEDICIÓN DE TRUCHAS ARCOIRIS UdeC</span>
-  <span class="example-spacer"></span>
-  <button mat-icon-button matTooltip="Iniciar Sesión"  class="example-icon favorite-icon" aria-label="" routerLink="/login">
-    <mat-icon>login</mat-icon>
-  </button>
-  <button mat-icon-button matTooltip="Menú" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/signin">
-      <mat-icon>app_registration</mat-icon>
-      <span>Registrarse</span>
-    </button>
-    <button mat-menu-item routerLink="/profile">
-      <mat-icon>account_box</mat-icon>
-      <span>Mi Perfil</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>logout</mat-icon>
-      <span>Cerrar Sesión</span>
-    </button>
-  </mat-menu>
-</mat-toolbar>
+<div [hidden]="flagProgressBar">
+</div>
+<mat-drawer-container class="container" hasBackdrop="true">
+  <mat-drawer #drawer mode="over" class="sidenav">
+    <img src="assets/fish.png" width="100%" />
 
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #sidenav class="example-sidenav" mode="side">
-    <img src="assets/fish.png" alt="logo" class="logo">
-    <button mat-menu-item (click)= "sidenav.toggle()" routerLink="/home">
-      <mat-icon>home</mat-icon>
-      <span>Inicio</span>
-    </button>
-    <button mat-menu-item (click)= "sidenav.toggle()" routerLink ="/peces">
-      <mat-icon>photo</mat-icon>
-      <span>Peces</span>
-    </button>
-    <button mat-menu-item (click)= "sidenav.toggle()" routerLink="/contacto">
-      <mat-icon>contact_support</mat-icon>
-      <span>Contacto</span>
-    </button>
+    <ng-container >
+      <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/home']">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <mat-divider></mat-divider>
+
+      <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/signin']">
+        <mat-icon>how_to_reg</mat-icon>
+        <span>Registrar</span>
+      </button>
+
+      <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/login']">
+        <mat-icon>login</mat-icon>
+        <span>Ingresar</span>
+      </button>
+
+      <mat-divider></mat-divider>
+    </ng-container>
+    <!-- componentes rol administrador -->
+    <!-- <ng-container *ngIf="this.log && this.authService.rol() == 'Administrador'"> -->
+      <ng-container>
+      <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/peces']"
+        routerLinkActive="active">
+        <mat-icon>perm_media</mat-icon>
+        <span>Peces</span>
+      </button>
+      <mat-divider></mat-divider>
+
+      <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/contacto']"
+        routerLinkActive="active">
+        <mat-icon>co_present</mat-icon>
+        <span>Contacto</span>
+      </button>
+      <mat-divider></mat-divider>
+
+      <!-- <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/asdasd']"
+        routerLinkActive="active">
+        <mat-icon>asdasdasd</mat-icon>
+        <span>asdasd</span>
+      </button> -->
+      <mat-divider></mat-divider>
+      
+    </ng-container>
+    <!-- componentes rol conductor -->
+    <!-- <ng-container *ngIf="this.log && this.authService.rol() == 'Usuario' "> -->
+      <!-- <ng-container>
+      <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/usuario']"
+        routerLinkActive="active">
+        <mat-icon>perm_identity</mat-icon>
+        <span>Usuario</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/pedido']"
+        routerLinkActive="active">
+        <mat-icon>assessment</mat-icon>
+        <span>Cargas</span>
+      </button>
+      <mat-divider></mat-divider>
+   
+    </ng-container> -->
   </mat-drawer>
-
   <mat-drawer-content>
+
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon *ngIf="!drawer.opened">menu</mat-icon>
+        <mat-icon *ngIf="drawer.opened">close</mat-icon>
+      </button>
+      <h1 class="name">MEDICIÓN TRUCHAS UdeC</h1>
+      <mat-menu>
+      </mat-menu>
+      <span class="menu"></span>
+      <!-- <ng-container *ngIf="this.log"> -->
+        <ng-container>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="['/profile']" routerLinkActive="active">
+            <mat-icon>account_box</mat-icon>
+            <span>Mi Perfil</span>
+          </button>
+          <button mat-menu-item (click)="this.authService.logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Cerrar Sesión</span>
+          </button>
+        </mat-menu>
+      </ng-container>
+
+    </mat-toolbar>
+
+
     <router-outlet></router-outlet>
 
   </mat-drawer-content>

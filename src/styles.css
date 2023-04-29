@@ -1,5 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Lato', sans-serif; }
+html, body { height: 100%; width: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+.mat-dialog-container{
+    background-color: rgba(25, 152, 236, 0.842);
+    color: #fff;
+    text-align: center;
+    align-items: center;
+}

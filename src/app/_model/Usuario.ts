@@ -6,4 +6,6 @@ export class Usuario{
     role: string = '';
     disabled: boolean = false;
     password: string = '';
+    scope?: '';
+    grant_type?: 'password';
 }

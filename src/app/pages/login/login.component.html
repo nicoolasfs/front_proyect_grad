@@ -1,26 +1,27 @@
-<div class="container">
-  <div class="login-container">
-    <div class="login-header">
-      <h2>Iniciar sesión</h2>
-      <hr>
-      <img src="assets/login.png" alt="logo" class="logo">
-    </div>
-    <div class="wrapper">
-      <form>
-        <label>Usuario:</label>
-        <input type="text" [(ngModel)]="credenciales.username" name="username" placeholder="Ingresar usuario">
-        <br>
-        <label>Contraseña:</label>
-        <input type="password" [(ngModel)]="credenciales.password" name="password" placeholder="Ingresar contraseña">
+<form class="custom-form" [formGroup]="form" (ngSubmit)="iniciar($event)">
+    <h1 class="center">Inicio de Sesión</h1>
+    <mat-form-field appearance="outline">
+        <mat-label>Nick de Usuario</mat-label>
+        <input matInput type="text" placeholder="Usuario" formControlName="user" maxlength="20" autocomplete="off" required>
+        <mat-error *ngIf="form.get('user')?.errors && form.get('user')?.touched">
+            <p *ngIf="form.get('user')?.hasError('required')">
+                Es un campo requerido
+            </p>
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Password" formControlName="password" maxlength="16"
+            autocomplete="off" required>
+        <mat-error *ngIf="form.get('password')?.errors && form.get('password')?.touched">
+            <p *ngIf="form.get('password')?.hasError('required')">
+                Es un campo requerido
+            </p>
+        </mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button [disabled]="form.invalid">
+        <mat-icon>login</mat-icon><span>Ingresar</span>
+    </button>
 
-        <button type="submit" (click)="iniciarSesion()">Iniciar sesión</button>
-      </form>
-    </div>
-    <div class="login-footer">
-      <p>¿No tiene una cuenta?</p>
-      <a href="/signin" class="primary__button">
-        Regístrese aquí
-      </a>
-    </div>
-  </div>
-</div>
+</form>

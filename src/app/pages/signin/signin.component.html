@@ -1,24 +1,46 @@
-<div class="container">
-<div class="login-container">
-  <h2>Registrarse</h2>
-  <hr>
-  <img src="assets/signin.png" alt="logo" class="logo">
-  <div class="wrapper">
-  <form>
-    <label>Usuario:</label>
-    <input type="text" [(ngModel)]="registro.username" name="username" placeholder="Ingrese el usuario">
-
-    <label>Nombre:</label>
-    <input type="text" [(ngModel)]="registro.name" name="nombre" placeholder="Ingrese su nombre">
-
-    <label>Cédula:</label>
-    <input type="number" [(ngModel)]="registro.cc" name="cedula" placeholder="Ingrese su cédula">
-
-    <label>Contraseña:</label>
-    <input type="password" [(ngModel)]="registro.password" name="contraseña" placeholder="Ingrese su contraseña">
-
-    <button type="submit" (click)="enviarRegistro()">Registrarse</button>
-  </form>
-  </div>
-</div>
-</div>
+<form class="custom-form" [formGroup]="form" (ngSubmit)="iniciar($event)">
+  <h1 class="center">Registro</h1>
+  <mat-form-field appearance="outline">
+    <mat-label>Nicname del usuario</mat-label>
+    <input matInput type="text" placeholder="Usuario" formControlName="username" maxlength="20" autocomplete="off" required>
+    <mat-error *ngIf="form.get('user')?.errors && form.get('user')?.touched">
+      <p *ngIf="form.get('user')?.hasError('required')">
+        Es un campo requerido
+      </p>
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre del usuario</mat-label>
+    <input matInput type="text" placeholder="Nombre" formControlName="name" maxlength="20" autocomplete="off" required>
+    <mat-error *ngIf="form.get('user')?.errors && form.get('user')?.touched">
+      <p *ngIf="form.get('user')?.hasError('required')">
+        Es un campo requerido
+      </p>
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline">
+    <mat-label>Cédula del usuario</mat-label>
+    <input matInput type="text" placeholder="Cédula" formControlName="cc" maxlength="20" autocomplete="off" required>
+    <mat-error *ngIf="form.get('user')?.errors && form.get('user')?.touched">
+      <p *ngIf="form.get('user')?.hasError('required')">
+        Es un campo requerido
+      </p>
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline">
+    <mat-label>Contraseña</mat-label>
+    <input matInput type="password" placeholder="Password" formControlName="password" maxlength="16" autocomplete="off"
+      required>
+    <mat-error *ngIf="form.get('password')?.errors && form.get('password')?.touched">
+      <p *ngIf="form.get('password')?.hasError('required')">
+        Es un campo requerido
+      </p>
+    </mat-error>
+  </mat-form-field>
+  <button type="submit" mat-raised-button [disabled]="form.invalid">
+    <mat-icon>login</mat-icon><span>Registrar</span>
+  </button>
+</form>

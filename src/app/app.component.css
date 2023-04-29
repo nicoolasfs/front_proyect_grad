@@ -1,26 +1,9 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
-  .toolbar{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  .logo{
-    width: 200px;
-    height: 200px;
-  }
-  .example-container {
-    width: auto;
-    height: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-  }
-  
-  .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .example-sidenav {
-    padding: 20px;
-  }
+.sidenav{
+  width: 300px;
+}
+.menu {
+  flex: 1 1 auto;
+}
+.name{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
