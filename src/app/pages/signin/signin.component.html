@@ -1,1 +1,24 @@
-<p>signin works!</p>
+<div>
+    <form>
+      <label>Username:</label>
+        <input type="text" [(ngModel)]="registro.username" name="username">
+
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="registro.name" name="nombre">
+
+      <label>CC:</label>
+      <input type="number" [(ngModel)]="registro.cc" name="cedula">
+
+      <label>Rol:</label>
+      <input type="text" [(ngModel)]="registro.role" name="rol">
+
+      <label>Disabled:</label>
+      <input type="text" [(ngModel)]="registro.disabled" name="disabled">
+  
+      <label>Contraseña:</label>
+      <input type="password" [(ngModel)]="registro.password" name="contraseña">
+  
+      <button type="submit" (click)="enviarRegistro()">Registrarse</button>
+    </form>
+  </div>
+  
