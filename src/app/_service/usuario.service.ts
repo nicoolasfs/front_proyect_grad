@@ -18,10 +18,5 @@ export class UsuarioService {
   public user() {
     return this.http.get<Usuario[]>(`${this.url}users/me`);
   }
-
-  public signin() {
-    return this.http.post<Usuario>(`${this.url}signin`, { username: ' ', name: '', password: ' '});
-  }
-
   }
 
