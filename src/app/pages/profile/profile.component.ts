@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './../../_service/auth.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { UsuarioService } from 'src/app/_service/usuario.service';
+import { Usuario } from 'src/app/_model/Usuario';
+import { MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -11,27 +12,20 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class ProfileComponent implements OnInit{
 
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  userData: any;
+  displayedColumns: string[] = ['cc', 'fullname', 'role', 'username'];
+  dataSource = new MatTableDataSource<Usuario>();
+
+  constructor(private usuarioService: UsuarioService, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // Llama a la función que hace la petición GET
-    this.hacerPeticion();
-  }
 
-  hacerPeticion() {
-    // Obtiene el token de autenticación almacenado en el servicio AuthService
-    const token = this.authService.getToken();
+    this.usuarioService.obtener().subscribe(data => {
 
-    // Define las cabeceras de la petición HTTP con el token de autenticación Bearer
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
+      this.dataSource = new MatTableDataSource(data);
+      this.userData = data;
+      console.log(data);  
     });
-
-    // Hace la petición GET a la API
-    this.http.get<any>('http://127.0.0.1:8000/auth/users/me', { headers: headers }).subscribe(
-      respuesta => console.log(respuesta),
-      error => console.log(error)
-    );
   }
+
 }

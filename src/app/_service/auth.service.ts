@@ -45,29 +45,35 @@ export class AuthService {
 
   //crea un metodo de registro
   register(username:string, name: string, cc: string, password: string){
-
-    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    const options = { headers: headers };
-    
-    const body = new URLSearchParams();
-    body.set('username', username);
-    body.set('name', name);
-    body.set('cc', cc);
-    body.set('password', password);
-    
-    this.http.post<any>('http://localhost:8000/auth/signin', body.toString(), options).subscribe(
-      respuesta => {
-        console.log("Usuario registrado");
-        return respuesta;
-      },
-      error => {
-        console.log("Error al registrar usuario");
-        console.log(error);
-        return error;
-      }
+    this.http.post('http://localhost:8000/auth/signin', this.register).subscribe(
+      respuesta => console.log(respuesta),
+      error => console.log(error)
     );
-    this.router.navigate(['/login']);
   }
+  // register(username:string, name: string, cc: string, password: string){
+
+  //   const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  //   const options = { headers: headers };
+    
+  //   const body = new URLSearchParams();
+  //   body.set('username', username);
+  //   body.set('name', name);
+  //   body.set('cc', cc);
+  //   body.set('password', password);
+    
+  //   this.http.post<any>('http://localhost:8000/auth/signin', body.toString(), options).subscribe(
+  //     respuesta => {
+  //       console.log("Usuario registrado");
+  //       return respuesta;
+  //     },
+  //     error => {
+  //       console.log("Error al registrar usuario");
+  //       console.log(error);
+  //       return error;
+  //     }
+  //   );
+  //   this.router.navigate(['/login']);
+  // }
 
   login(usuario:string, password: string){
 

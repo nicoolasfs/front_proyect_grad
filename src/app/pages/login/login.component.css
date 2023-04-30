@@ -11,17 +11,23 @@ h1 {
     font-weight: 100;
     margin: 0 0 1rem;
     text-transform: uppercase;
-    color: #f45b69;
+    color: #f7ecee;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    text-align: center;
 }
 
 p {
-    color: darkred;
+    color: rgb(255, 255, 255);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .custom-form {
     text-align: center;
     overflow: hidden;
-    background-color: white;
+    background-color: rgb(83, 82, 82);
     padding: 40px 30px 30px 30px;
     border-radius: 10px;
     position: absolute;
@@ -54,7 +60,7 @@ p {
 .custom-form::before {
     left: 40%;
     bottom: -130%;
-    background-color: rgba(69, 105, 144, 0.301);
+    background-color: rgba(61, 137, 230, 0.301);
     -webkit-animation: wawes 6s infinite linear;
     -moz-animation: wawes 6s infinite linear;
     animation: wawes 6s infinite linear;
@@ -63,14 +69,14 @@ p {
 .custom-form::after {
     left: 35%;
     bottom: -125%;
-    background-color: rgba(2, 128, 144, 0.288);
+    background-color: rgba(99, 154, 160, 0.288);
     -webkit-animation: wawes 7s infinite;
     -moz-animation: wawes 7s infinite;
     animation: wawes 7s infinite;
 }
 
 .custom-form input {
-    color: rgb(15, 73, 199);
+    color: rgb(233, 236, 243);
     font-family: "Asap", sans-serif;
     display: block;
     border-radius: 5px;
@@ -85,7 +91,7 @@ p {
    
 }
 .custom-form button {
-    font-family: "Asap", sans-serif;
+    font-family: "JetBrains Mono", monospace;
     cursor: pointer;
     color: #fff;
     font-size: 16px;
@@ -96,7 +102,7 @@ p {
     margin-top: 10px;
     margin-left: -5px;
     border-radius: 5px;
-    background-color: #f45b69;
+    background-color: #463b3c;
     -webkit-transition: background-color 300ms;
     -moz-transition: background-color 300ms;
     transition: background-color 300ms;
@@ -104,7 +110,9 @@ p {
 
 .custom-form button:hover {
     transform: translateY(-3px);
-    background: rgb(136, 97, 207);
+    background: rgb(118, 118, 119);
+    box-shadow: 0 5px 10px rgba(7, 6, 6, 0.2);
+
 }
 
 .custom-form button:hover:active {

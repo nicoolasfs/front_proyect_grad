@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    background: #ecf0f3;
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 100;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    color: #f7ecee;
+    border-color: black;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    text-align: center;
+}
+.name{
+    font-size: 1.75rem;
+    font-weight: 100;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    color: #f7ecee;
+    font-family: cursive;
+    font-weight: 700;
+    text-align: center;
+}
+h2{
+    font-size: 1.75rem;
+    font-weight: 100;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    color: #f7ecee;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    text-align: center;
+}
+
+.custom-form {
+    text-align: center;
+    overflow: hidden;
+    background-color: rgb(83, 82, 82);
+    padding: 40px 30px 30px 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
+    -moz-transition: -moz-transform 300ms, box-shadow 300ms;
+    transition: transform 300ms, box-shadow 300ms;
+    box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+}
+.label{
+    color: rgb(255, 255, 255);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 16px;
+    font-weight: 400;
+}
+.custom-form::before, .custom-form::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 40%;
+    z-index: -1;
+}
+
+.custom-form::before {
+    left: 40%;
+    bottom: -130%;
+    background-color: rgba(61, 137, 230, 0.301);
+    -webkit-animation: wawes 6s infinite linear;
+    -moz-animation: wawes 6s infinite linear;
+    animation: wawes 6s infinite linear;
+}
+
+.custom-form::after {
+    left: 35%;
+    bottom: -125%;
+    background-color: rgba(99, 154, 160, 0.288);
+    -webkit-animation: wawes 7s infinite;
+    -moz-animation: wawes 7s infinite;
+    animation: wawes 7s infinite;
+}
+
+p {
+    color: rgb(255, 255, 255);
+    font-family: cursive;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+@-webkit-keyframes wawes {
+    from {
+        -webkit-transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes wawes {
+    from {
+        -moz-transform: rotate(0);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@keyframes wawes {
+    from {
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
